@@ -16,5 +16,23 @@ namespace MessageBoxPrac
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("내용");
+            MessageBox.Show("내용", "제목");
+            MessageBox.Show("내용", "제목",
+                MessageBoxButtons.AbortRetryIgnore);
+
+            DialogResult result;
+            do
+            {
+                result = MessageBox.Show("내용", "제목",
+                    MessageBoxButtons.AbortRetryIgnore,
+                    MessageBoxIcon.Exclamation);
+            } while (result == DialogResult.Retry);
+
+            
+        }
     }
 }
